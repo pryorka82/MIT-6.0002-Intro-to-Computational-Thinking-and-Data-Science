@@ -37,7 +37,7 @@ def dp_make_weight(egg_weights, target_weight, memo):
     if target_weight in egg_weights:
         memo[target_weight] = 1
         return 1
-    elif memo[target_weight] > 0:
+    elif target_weight in memo and memo[target_weight] > 0:
         return memo[target_weight]
     else:
         for i in [c for c in egg_weights if c <= target_weight]:
